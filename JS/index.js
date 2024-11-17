@@ -44,6 +44,10 @@ function handleKeyboardKeyPress(event) {
         if (updatedLifeScore === 0) {
             gameOver();
         }
+        // stop the game if pressed 'Esc'
+        if (pressedKey === 'Escape') {
+            gameOver();
+        }
 
         // ===========================================
         // //1. get current life score
