@@ -89,5 +89,10 @@ function gameOver() {
     // 1. get last score
     const lastScore = getTextElementValueById('current-score');
     setTextElementValueById('last-score', lastScore);
+
+    // reset current alphabet/ clear last selected alphabet background
+    const lastSelectedAlphabet = getElementTextById('current-alphabet');
+    removeKbdBackgroundColorById(lastSelectedAlphabet);
+
 }
 
