@@ -37,14 +37,20 @@ function handleKeyboardKeyPress(event) {
         removeKbdBackgroundColorById(pressedKey);
     }
     else {
-        //1. get current life score
-        const currentLifeScoreElement = document.getElementById('life-score');
-        const currentLifeScoreText = currentLifeScoreElement.innerText;
-        const currentLifeScore = parseInt(currentLifeScoreText);
-        //2. reduce life score if you pressed wrong key
-        const newLifeScore = currentLifeScore - 1;
-        //3. show the updated life score
-        currentLifeScoreElement.innerText = newLifeScore;
+        const lifeScore = getTextElementValueById('life-score');
+        const updatedLifeScore = lifeScore - 1;
+        setTextElementValueById('life-score', updatedLifeScore);
+
+        // ===========================================
+        // //1. get current life score
+        // const currentLifeScoreElement = document.getElementById('life-score');
+        // const currentLifeScoreText = currentLifeScoreElement.innerText;
+        // const currentLifeScore = parseInt(currentLifeScoreText);
+        // //2. reduce life score if you pressed wrong key
+        // const newLifeScore = currentLifeScore - 1;
+        // //3. show the updated life score
+        // currentLifeScoreElement.innerText = newLifeScore;
+        // ===========================================
     }
 
 }
