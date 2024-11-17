@@ -73,7 +73,12 @@ function continueGame() {
 }
 function play() {
     hideElementById('home-screen');
+    hideElementById('final-score');
     showElementById('playground');
+    // reset life score and current score
+    setTextElementValueById('life-score', 5);
+    setTextElementValueById('current-score', 0);
+
     continueGame();
 }
 
