@@ -85,5 +85,9 @@ function play() {
 function gameOver() {
     hideElementById('playground');
     showElementById('final-score');
+    // set last score to final score section
+    // 1. get last score
+    const lastScore = getTextElementValueById('current-score');
+    setTextElementValueById('last-score', lastScore);
 }
 
