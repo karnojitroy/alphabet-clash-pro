@@ -15,15 +15,23 @@ function handleKeyboardKeyPress(event) {
 
     // check matched or not
     if (pressedKey === displayKey) {
-        // update score
-        // 1. get current score
-        const currentScoreElement = document.getElementById('current-score');
-        const currentScoreText = currentScoreElement.innerText;
-        const currentScore = parseInt(currentScoreText);
-        // update current score
-        const newScore = currentScore + 1;
-        // show total current score
-        currentScoreElement.innerText = newScore;
+
+        const currentScore = getTextElementValueById('current-score');
+        // console.log(currentScore)
+        const updatedScore = currentScore + 1;
+        setTextElementValueById('current-score', updatedScore);
+
+        // ===========================================
+        // // update score
+        // // 1. get current score
+        // const currentScoreElement = document.getElementById('current-score');
+        // const currentScoreText = currentScoreElement.innerText;
+        // const currentScore = parseInt(currentScoreText);
+        // // update current score
+        // const newScore = currentScore + 1;
+        // // show total current score
+        // currentScoreElement.innerText = newScore;
+        // ===========================================
         // next round
         continueGame();
         removeKbdBackgroundColorById(pressedKey);
@@ -36,10 +44,8 @@ function handleKeyboardKeyPress(event) {
         //2. reduce life score if you pressed wrong key
         const newLifeScore = currentLifeScore - 1;
         //3. show the updated life score
-        currentLifeScoreElement.innerText =newLifeScore; 
+        currentLifeScoreElement.innerText = newLifeScore;
     }
-
-    console.log(displayKey)
 
 }
 
