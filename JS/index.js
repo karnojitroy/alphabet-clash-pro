@@ -41,6 +41,10 @@ function handleKeyboardKeyPress(event) {
         const updatedLifeScore = lifeScore - 1;
         setTextElementValueById('life-score', updatedLifeScore);
 
+        if (updatedLifeScore === 0) {
+            gameOver();
+        }
+
         // ===========================================
         // //1. get current life score
         // const currentLifeScoreElement = document.getElementById('life-score');
@@ -66,12 +70,15 @@ function continueGame() {
 
     // set background color
     setKbdBackgroundColorById(alphabet);
-
-
 }
 function play() {
     hideElementById('home-screen');
     showElementById('playground');
     continueGame();
+}
+
+function gameOver() {
+    hideElementById('playground');
+    showElementById('final-score');
 }
 
