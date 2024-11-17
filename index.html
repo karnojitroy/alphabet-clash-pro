@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -8,13 +9,122 @@
     <link href="https://cdn.jsdelivr.net/npm/daisyui@4.12.14/dist/full.min.css" rel="stylesheet" type="text/css" />
     <script src="https://cdn.tailwindcss.com"></script>
     <!-- Custom css link -->
-     <link rel="stylesheet" href="/CSS/style.css">
-     <!-- Font awesome -->
-     <script src="https://kit.fontawesome.com/c39147c565.js" crossorigin="anonymous"></script>
-    
+    <link rel="stylesheet" href="/CSS/style.css">
+    <!-- Font awesome -->
+    <script src="https://kit.fontawesome.com/c39147c565.js" crossorigin="anonymous"></script>
+
 </head>
-<body>
-    
-    <script src="/JS/index.js"></script>
+
+<body class="">
+    <main class="bg-[#010313] bg-[url(images/background.png)] bg-contain bg-no-repeat bg-center min-h-screen">
+        <!-- home section -->
+        <section id="home-screen" class="flex justify-center items-center min-h-screen text-center home">
+            <div class="flex flex-col items-center space-y-5">
+                <h1 class="font-anton font-normal text-[#FFFFFF] text-[110px]">ALPHABET CLASH</h1>
+                <p class="font-medium font-poppins text-[#FFFFFF] text-xl">
+                    Unleash Your Keyboard Kung Fu : Press “Enter” to Play
+                </p>
+                <button onclick="play()"
+                    class="bg-white hover:bg-fuchsia-600 px-6 py-4 border-none rounded-lg transition duration-700 ease-in-out">
+                    <p class="font-poppins font-semibold text-[#010313] text-xl">Play Now</p>
+                </button>
+            </div>
+        </section>
+        <!-- playground start-->
+        <section id="playground" class="hidden play-ground">
+            <div class="flex flex-col items-center gap-14 pt-20">
+                <!-- screen -->
+                <div
+                    class="relative border-[#010313CC] border-[20px] bg-[#FFFFFFB3] rounded-2xl artboard artboard-horizontal phone-6">
+
+                    <div class="absolute flex justify-center w-full">
+                        <p
+                            class="bg-[#2F2941] p-4 rounded-bl-xl rounded-br-xl font-medium font-poppins text-center text-sm text-white">
+                            Don't watch keyboard while playing...
+                        </p>
+                    </div>
+                    <div class="flex justify-center items-center h-full">
+                        <h1 id="current-alphabet" class="font-poppins font-semibold text-[#010313] text-8xl uppercase">Y</h1>
+                    </div>
+
+                </div>
+                <!-- Keyboard start-->
+                <div>
+                    <div class="flex justify-center gap-1 my-1 w-full">
+                        <kbd id="w" class="kbd">w</kbd>
+                        <kbd id="q" class="kbd">q</kbd>
+                        <kbd id="e" class="kbd">e</kbd>
+                        <kbd id="r" class="kbd">r</kbd>
+                        <kbd id="t" class="kbd">t</kbd>
+                        <kbd id="y" class="kbd">y</kbd>
+                        <kbd id="u" class="kbd">u</kbd>
+                        <kbd id="i" class="kbd">i</kbd>
+                        <kbd id="o" class="kbd">o</kbd>
+                        <kbd id="p" class="kbd">p</kbd>
+                    </div>
+                    <div class="flex justify-center gap-1 my-1 w-full">
+                        <kbd id="a" class="kbd">a</kbd>
+                        <kbd id="s" class="kbd">s</kbd>
+                        <kbd id="d" class="kbd">d</kbd>
+                        <kbd id="f" class="kbd">f</kbd>
+                        <kbd id="g" class="kbd">g</kbd>
+                        <kbd id="h" class="kbd">h</kbd>
+                        <kbd id="j" class="kbd">j</kbd>
+                        <kbd id="k" class="kbd">k</kbd>
+                        <kbd id="l" class="kbd">l</kbd>
+                    </div>
+                    <div class="flex justify-center gap-1 my-1 w-full">
+                        <kbd id="z" class="kbd">z</kbd>
+                        <kbd id="x" class="kbd">x</kbd>
+                        <kbd id="c" class="kbd">c</kbd>
+                        <kbd id="v" class="kbd">v</kbd>
+                        <kbd id="b" class="kbd">b</kbd>
+                        <kbd id="n" class="kbd">n</kbd>
+                        <kbd id="m" class="kbd">m</kbd>
+                        <kbd id="/" class="kbd">/</kbd>
+                    </div>
+                </div>
+                <!-- Keyboard end-->
+
+                <!-- live score -->
+                <div class="flex justify-between w-2/3">
+                    <button
+                        class="bg-[#894189] bg-[url(/icon/Rectangle.svg)] hover:bg-purple-500 bg-no-repeat border-none rounded-full text-white btn">
+                        Life
+                        <img src="/icon/Love.svg" alt="">
+                        <span>1</span>
+                    </button>
+
+                    <button class="bg-[#360490] hover:bg-blue-600 border-none rounded-full text-white btn">
+                        Score
+                        <img src="/icon//monetization_on.svg" alt="">
+                        <span>1</span>
+                    </button>
+                </div>
+            </div>
+        </section>
+        <!-- playground end -->
+        <section class="flex justify-center items-center hidden min-h-screen score">
+            <div
+                class="space-y-4 bg-[url(/icon/Rectangle7.svg)] bg-contain bg-no-repeat font-poppins text-center text-white">
+                <div
+                    class="space-y-4 bg-gradient-to-l from-[#98979733] to-[#FFFFFF8F] shadow-[0_4px_4px_0_rgba(0,0,0,0.25)] p-11 rounded-2xl">
+                    <h1 class="text-4xl">
+                        <span class="font-extrabold">Score:</span>
+                        <span class="font-medium">14</span>
+                    </h1>
+                    <button
+                        class="bg-white hover:bg-fuchsia-600 px-4 py-2 border-none rounded-lg transition duration-700 ease-in-out">
+                        <p class="font-semibold text-[#010313] text-sm">Play Again</p>
+                    </button>
+                    <p class="font-medium text-xs">Practice will make you Pro</p>
+                </div>
+            </div>
+        </section>
+
+    </main>
+    <script src="JS/utility.js"></script>
+    <script src="JS/index.js"></script>
 </body>
+
 </html>
